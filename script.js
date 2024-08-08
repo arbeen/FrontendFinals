@@ -82,7 +82,7 @@ function showCartPopup() {
         itemElement.innerHTML = `
         <img src="${item.image}" alt="${item.name}" >
         <div class="cart-desc">
-            <p>${item.quantity} x ${item.name}</p>
+            <p>${item.quantity} x ${item.name} ($${item.price})</p>
             <h3>$${itemTotal.toFixed(2)}</h3>
         </div>
         <div class="cart-controls">
