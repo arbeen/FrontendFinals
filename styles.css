@@ -246,6 +246,14 @@ main {
     background-color: #ddffdd;
 }
 
+
+.cart-controls .remove-btn {
+    background-color: #ffdddd;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+
 .cart-controls .minus-btn:hover {
     background-color: #ffcccc;
 }
@@ -254,6 +262,10 @@ main {
     background-color: #ccffcc;
 }
 
+.cart-controls .remove-btn:hover {
+    background-color: #ffcccc;
+    color: #cc0000;
+}
 
 #cart-items {
     margin: 20px 0;

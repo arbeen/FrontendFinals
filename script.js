@@ -88,6 +88,7 @@ function showCartPopup() {
         <div class="cart-controls">
             <button class="minus-btn" data-index="${index}">-</button>
             <button class="plus-btn" data-index="${index}">+</button>
+            <button class="remove-btn" data-index="${index}">Remove</button>
         </div>
         `;
         cartItems.appendChild(itemElement);
@@ -108,6 +109,10 @@ function showCartPopup() {
     document.querySelectorAll('.minus-btn').forEach(button => {
         button.addEventListener('click', () => updateQuantity(button.dataset.index, -1));
     });
+
+    document.querySelectorAll('.remove-btn').forEach(button => {
+        button.addEventListener('click', () => removeItem(button.dataset.index));
+    });
 }
 
 function updateQuantity(index, change) {
@@ -121,6 +126,20 @@ function updateQuantity(index, change) {
 
     showCartPopup(); // Refresh the popup with updated cart
 }
+
+function removeItem(index) {
+    index = parseInt(index); // Ensure index is an integer
+    if (index >= 0 && index < cart.length) {
+        cart.splice(index, 1); // Remove the item from the cart array
+        localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+        showCartPopup(); // Refresh the popup with updated cart
+        updateCartCount(); // Update cart count display
+    } else {
+        console.error('Invalid index for removal:', index);
+    }
+}
+
+
 document.getElementById('cart-button').addEventListener('click', showCartPopup);
 
 document.querySelector('.close-cart').addEventListener('click', () => {
