@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "TALON – Fade",
+        "price": 19.99,
+        "image": "https://knify.gg/medias/2023/11/real-cs-talon-knife-fade-irl-2000x2000.webp"
+    },
+    {
+        "id": 2,
+        "name": "BUTTERFLY – kennyS",
+        "price": 29.99,
+        "image": "https://knify.gg/medias/2023/11/real-cs-butterfly-knife-kennys-irl-2000x2000.webp"
+    },
+    {
+        "id": 3,
+        "name": "SKELETON – Tiger Tooth",
+        "price": 39.99,
+        "image": "https://knify.gg/medias/2023/11/real-cs-skeleton-knife-tiger-tooth-irl-2000x2000.webp"
+    },
+    {
+        "id": 4,
+        "name": "FALCHION – Blackpearl",
+        "price": 39.99,
+        "image": "https://knify.gg/medias/2024/03/real-cs-falchion-knife-doppler-blackpearl-irl-2000x2000.webp"
+    },
+    {
+        "id": 5,
+        "name": "TACTICAL KNIFE – Prism Fade",
+        "price": 9.99,
+        "image": "https://knify.gg/medias/2023/11/real-valorant-tactical-prism-knife-fade-irl-2000x2000.webp"
+    },
+    {
+        "id": 6,
+        "name": "SHADOW DAGGERS – Lore",
+        "price": 49.99,
+        "image": "https://knify.gg/medias/2023/11/Shadow-Daggers-Lore-Standard.jpg"
+    }
+]

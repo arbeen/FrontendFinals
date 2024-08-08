@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnivesForYou</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>KnivesForYou</h1>
+            <button id="cart-button"> 🛒 Cart (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="products">
+            <h2>Best selling knives</h2>
+            <div id="product-list" class="product-list"></div>
+            <div id="notification" class="notification">🎉 Item added to cart!</div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <div id="cart-tax"></div>
+            <div id="cart-net"></div>
+            <button id="checkout">Checkout</button>
+            <div class="close-cart">Close</div>
+        </div>
+    </div>
+
+<span class="credits">Assets used from: https://knify.gg/</span>
+    <script src="script.js"></script>
+</body>
+</html>
