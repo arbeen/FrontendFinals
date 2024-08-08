@@ -46,7 +46,12 @@ function addToCart(productId) {
 
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
-            showNotification(); // Show notification when item is added to cart
+            showNotification();
+
+            document.querySelector(`.add-to-cart[data-id="${productId}"]`).textContent = 'Added!';
+            setTimeout(() => {
+                document.querySelector(`.add-to-cart[data-id="${productId}"]`).textContent = 'Add to Cart';
+            }, 1000); // Revert text after 2 seconds
         });
 }
 
