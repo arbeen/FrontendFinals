@@ -215,6 +215,46 @@ main {
     color: #ff5e7e;
 }
 
+.cart-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cart-controls button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cart-controls button:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+.cart-controls .minus-btn {
+    background-color: #ffdddd;
+}
+
+.cart-controls .plus-btn {
+    background-color: #ddffdd;
+}
+
+.cart-controls .minus-btn:hover {
+    background-color: #ffcccc;
+}
+
+.cart-controls .plus-btn:hover {
+    background-color: #ccffcc;
+}
+
+
 #cart-items {
     margin: 20px 0;
     max-height: 500px;

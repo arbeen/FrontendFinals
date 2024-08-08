@@ -63,7 +63,6 @@ function updateCartCount() {
     const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
     document.getElementById('cart-count').textContent = cartCount;
 }
-
 function showCartPopup() {
     const cartPopup = document.getElementById('cart-popup');
     const cartItems = document.getElementById('cart-items');
@@ -74,19 +73,22 @@ function showCartPopup() {
     cartItems.innerHTML = '';
     let subtotal = 0;
 
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
 
         const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
         itemElement.innerHTML = `
-        <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}" > 
-            <div class="cart-desc">
-                <p>${item.quantity} x ${item.name} </p>
-                <h3>$${itemTotal.toFixed(2)}</h3>
-            </div>
-        </div?>
+        <img src="${item.image}" alt="${item.name}" >
+        <div class="cart-desc">
+            <p>${item.quantity} x ${item.name}</p>
+            <h3>$${itemTotal.toFixed(2)}</h3>
+        </div>
+        <div class="cart-controls">
+            <button class="minus-btn" data-index="${index}">-</button>
+            <button class="plus-btn" data-index="${index}">+</button>
+        </div>
         `;
         cartItems.appendChild(itemElement);
     });
@@ -97,8 +99,28 @@ function showCartPopup() {
     cartNet.textContent = `Total: $${(subtotal + tax).toFixed(2)}`;
 
     cartPopup.style.display = 'flex';
+
+    // Add event listeners for the plus and minus buttons
+    document.querySelectorAll('.plus-btn').forEach(button => {
+        button.addEventListener('click', () => updateQuantity(button.dataset.index, 1));
+    });
+
+    document.querySelectorAll('.minus-btn').forEach(button => {
+        button.addEventListener('click', () => updateQuantity(button.dataset.index, -1));
+    });
 }
 
+function updateQuantity(index, change) {
+    const item = cart[index];
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+        // Remove item if quantity is 0 or less
+        cart.splice(index, 1);
+    }
+
+    showCartPopup(); // Refresh the popup with updated cart
+}
 document.getElementById('cart-button').addEventListener('click', showCartPopup);
 
 document.querySelector('.close-cart').addEventListener('click', () => {
